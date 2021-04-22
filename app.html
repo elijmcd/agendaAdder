@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Agenda Adder</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link href="/img/favicon.ico" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Agenda Adder</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/app.html">The App</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/code.html">See the Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//github.com/elijmcd/" target="_blank">Get the Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="//www.dougaldev.net" target="_blank">My Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 column1">
+            <img class="sticker" src="img/agendaAdder.png" alt="AgendaAdder Logo">
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 column2">
+            <hr><br>
+            <form id="agendaAdder">
+                <input id="agendaAdding" type="text" placeholder="What do you need to do?" autocomplete="off">
+                <div class="form-group">
+                    <button id="agendaAdder" type="button" data-toggle="modal" data-target="#myModal"
+                        class="form-control btn">Add Agendum</button>
+                </div>
+                <br>
+                <hr>
+            </form>
+        </div>
+    </div>
+    <div class="row" id="tableRow">
+        <div class="col-8 offset-2">
+            <div class="table-responsive">
+                <br>
+                <h1>🐍</h1>
+                <br>
+                <!-- <button type="button" data-toggle="modal" data-target="#myModal"
+                    class="btn btn-info btn-block btn-outline-dark">
+                    ADD AGENDUMENTS
+                </button> -->
+                <table class="table table-striped" id="eventData">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="d-none"></th>
+                            <th style="font-size: 22px;">📋 Agendum</th>
+                            <th style="font-size: 17px;">📅 Add Date</th>
+                            <th style="font-size: 17px;">⏳ Due Date</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="agendaBody">
+                        <!-- insert data here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 style="text-align: center;">Add New Agendum</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="rev-style" style="padding-top: .25rem">
+                        <form onsubmit="createAgendum(this)">
+                            <input type="hidden" name="ModalCreate" value="true" />
+                            <div class="form-group">
+                                <label for="title" class="font-weight-bold" style="font-size:22px;">Task:</label>
+                                <input type="text" class="form-control" name="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="dueDate" class="font-weight-bold">Due Date:</label>
+                                <input type="date" class="form-control" name="dueDate">
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-outline-info">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Adjust Agendum</h2>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="rev-style" style="padding-top: .25rem">
+                        <form onsubmit="editAgendum(this)">
+                            <input type="hidden" name="ModalCreate" value="true" />
+                            <input type="hidden" name="" id="editId" />
+                            <div class="form-group">
+                                <label for="editTitle" class="font-weight-bold">Task:</label>
+                                <input type="text" class="form-control" id="editTitle" name="editTitle">
+                            </div>
+                            <div class="form-group">
+                                <label for="editDueDate" class="font-weight-bold">Due Date:</label>
+                                <input type="date" class="form-control" id="editDueDate" name="editDueDate">
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-outline-info">Edit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <template id="template">
+        <tr id="agendaRow">
+            <td class="d-none" id="id"></td>
+            <td id="title"></td>
+            <td id="created"></td>
+            <td id="dueDate"></td>
+            <td id="tdCrud" data-id="">
+                <a onclick="accomplishAgendum(this)" class="btn btn-sm btn-outline-warning btn-light"
+                    style="font-size: 20px">✅</a>
+                <a onclick="popEditModal(this)" class="btn btn-sm btn-outline-warning btn-light" type="button"
+                    data-toggle="modal" data-target="#editModal" style="font-size: 20px">✍</a>
+                <a onclick="abolishAgendum(this)" class="btn btn-sm btn-outline-warning btn-light"
+                    style="font-size: 20px">❌</a>
+            </td>
+        </tr>
+    </template>
+
+    <footer class="footer footer">
+        <div class="container-fluid">
+            <span>~AgendaAdder~ | &copy; Eli McDougal | 2021</span>
+        </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="/js/site.js"></script>
+</body>
+
+</html>

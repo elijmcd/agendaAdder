@@ -1,0 +1,330 @@
+body {
+    font-family: 'Zen Dots',"Monaco", monospace;
+    background-color: #8d7759
+}
+
+hr {
+    font-family: "Monaco", monospace;
+    overflow: visible;
+    border: none;
+    border-top: medium double #3b2a0f;
+    color: orange;
+    text-align: center;
+}
+
+hr:after {
+    content: "§";
+    display: inline-block;
+    position: relative;
+    top: -1rem;
+    font-size: 1.5rem;
+    padding: 0 0.25rem;
+    background-color: #8d7759
+}
+
+h1 {
+    padding: 15px;
+    background-color: #3b2a0f;
+    border: 4px solid gold;
+    border-style: groove;
+    border-radius: 7px 77px;
+    text-align: center;
+    opacity: 0.6;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    color: gold;
+    font-size: 56px;
+    text-shadow: 2px 2px 7px orange;
+    box-shadow: 2px 2px 7px orange;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: auto;
+    text-align: center;
+    /* color: #3b2a0f; */
+}
+
+h3,
+form {
+    text-align: center;
+    color: #3b2a0f;
+}
+
+/* ul {
+    max-width: 100%;
+    background: #3b2a0f;
+    padding: 20px;
+    box-align: center;
+    list-style: square;
+    font-size: 200%;
+    list-style-position: outside;
+} */
+
+/* ul li {
+    font-size: 1.5rem;
+    max-width: 100%;
+    border-radius: 7px 77px;
+    background: #c3a33a;
+    margin: 5px;
+} */
+
+.abolishbutton {
+    background-color: #3b2a0f;
+    border: none;
+    border-radius: 77px 7px;
+    color: orange;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.abolishbutton:hover {
+    opacity: 1
+}
+
+.row {
+    display: flex;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column1 {
+    margin-top: 80px;
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.column2 {
+    margin-top: 80px;
+    float: right;
+    width: 50%;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    object-fit: contain;
+    top: 50%;
+    transform: translateY(7%);
+}
+
+.sticker {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 18px;
+    width: 75%;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid orange;
+    border-style: groove outset;
+}
+
+img {
+    box-shadow: 0 2px 7px orange;
+    max-width: 100%;
+    max-height: auto;
+    display: block;
+    margin: auto;
+    border: 1px solid orange;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+button {
+    color: orange;
+    background-color: #443318;
+    border-radius: 7px;
+    padding: 14px;
+}
+
+.button {
+    background-color: #3b2a0f;
+    border: none;
+    border-radius: 7px 77px;
+    color: orange;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 1
+}
+
+input[type=text] {
+    font-size: 1rem;
+    background-color: #DDBA49;
+    border-radius: 77px 9px;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 24px 0;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+tr.complete>td:nth-child(-n+4) {
+    text-decoration: orangered wavy line-through;
+}
+
+#agendaRow {
+    background: #DDBA49;
+    font-size: larger;
+    font-weight: 600;
+    color: #3b2a0f;
+    border-radius: 7px 77px !important;
+
+}
+
+#eventData>thead {
+    background-color: #DDBA49;
+    color: #DDBA49;
+}
+
+#tableRow>div>div>button {
+    background-color: #3b2a0f;
+    border: none;
+    border-radius: 7px 77px;
+    color: orange;
+    padding: 16px 32px;
+    text-align: center;
+    font-weight: 600;
+    font-size: xx-large;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid orange;
+}
+
+#agendaAdder>div>button {
+    background-color: #694c1e;
+    border-radius: 77px 7px;
+    color: #DDBA49;
+    text-align: center;
+    font-weight: 400;
+    font-size: xx-large;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid orange;
+    max-width: 50%;
+    text-shadow: 1px 1px 4px orange;
+}
+
+#agendaAdder>div>button:hover {
+    background-color: #DDBA49;
+    border-radius: 77px 7px;
+    color: #694c1e;
+}
+
+#myModal>div>div>div.modal-body.text-center>div>form>div>input {
+    width: 100%;
+    font-size: 22px;
+}
+
+#myModal>div>div>div.modal-body.text-center>div>form>div>input {
+    background-color: gold;
+    color: #3b2a0f;
+}
+
+#myModal>div>div>div.modal-header {
+    background-color: #694c1e;
+    border: 2px solid goldenrod;
+}
+
+#myModal>div>div>div.modal-body.text-center {
+    background-color: #8d7759;
+    border: 2px solid goldenrod;
+}
+
+#myModal>div>div>div.modal-header {
+    text-align: center;
+    padding-left: 70px;
+    text-shadow: 1px 1px 4px orange;
+    color: #DDBA49;
+}
+
+#myModal>div>div>div.modal-header>button {
+    color: red;
+    font-size: xx-large;
+}
+
+#myModal>div>div>div.modal-body.text-center>div>form>button {
+    background-color: #694c1e;
+    color: #DDBA49;
+    border: #DDBA49;
+    width: 75%;
+    margin-top:20px;
+}
+
+#myModal>div>div>div.modal-body.text-center>div>form>button:hover {
+    background-color: #DDBA49;
+    border-radius: 77px 7px;
+    color: #694c1e;
+}
+
+
+#editModal>div>div>div.modal-body.text-center>div>form>div>input {
+    width: 100%;
+    font-size: 22px;
+}
+
+#editModal>div>div>div.modal-body.text-center>div>form>div>input {
+    background-color: gold;
+    color: #3b2a0f;
+}
+
+#editModal>div>div>div.modal-header {
+    background-color: #694c1e;
+    border: 2px solid goldenrod;
+}
+
+#editModal>div>div>div.modal-body.text-center {
+    background-color: #8d7759;
+    border: 2px solid goldenrod;
+}
+
+#editModal>div>div>div.modal-header {
+    text-align: center;
+    padding-left: 70px;
+    text-shadow: 1px 1px 4px orange;
+    color: #DDBA49;
+}
+
+#editModal>div>div>div.modal-header>button {
+    color: red;
+    font-size: xx-large;
+}
+
+#editModal>div>div>div.modal-body.text-center>div>form>button {
+    background-color: #694c1e;
+    color: #DDBA49;
+    border: #DDBA49;
+    width: 75%;
+    margin-top: 20px;
+}
+
+#editModal>div>div>div.modal-body.text-center>div>form>button:hover {
+    background-color: #DDBA49;
+    border-radius: 77px 7px;
+    color: #694c1e;
+}

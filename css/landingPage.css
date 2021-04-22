@@ -1,0 +1,311 @@
+/*!
+ * Start Bootstrap - Coming Soon v5.0.9 (https://startbootstrap.com/theme/coming-soon)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-coming-soon/blob/master/LICENSE)
+ */
+
+html {
+  height: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 65px;
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #355C7D;
+  color: darkgoldenrod;
+}
+
+body {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  height: 100%;
+  min-height: 35rem;
+  position: relative;
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  /* width: 100vw;
+  height: 100vh; */
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Cambridge', Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  opacity: 0.7;
+  z-index: 1;
+  background-size: cover;
+  background-image: url(/img/arizona-cactus-southwest-usa.jpg);
+}
+
+body>div.masthead>div.container.h-100>div>div{
+  margin-top: 0;
+  padding-top: 0;
+}
+.masthead {
+  object-position: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 3rem;
+  z-index: 2;
+}
+
+.masthead .masthead-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  min-height: 35rem;
+  height: 100%;
+  background-color: rgba(180, 168, 98, 0.8);
+  transform: skewY(180deg);
+  transform-origin: top right;
+}
+
+.masthead .masthead-content h1 {
+  min-width: 120%;
+  text-align: center;
+  color: #002E66;
+  text-shadow: goldenrod 3px 3px 3px;
+  font-size: 2.5rem;
+  min-width: 100%;
+}
+
+.masthead .masthead-content p {
+  min-width: 120%;
+  text-align: center;
+  color: #002E66;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.masthead .masthead-content p strong {
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .masthead {
+    height: 100%;
+    min-height: 0;
+    width: 40.5rem;
+    padding-bottom: 0;
+  }
+
+  .masthead .masthead-bg {
+    min-height: 0;
+    transform: skewX(-8deg);
+    transform-origin: right;
+  }
+
+  .masthead .masthead-content {
+    padding-left: 3rem;
+    padding-right: 10rem;
+  }
+
+  .masthead .masthead-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .masthead .masthead-content p {
+    font-size: 1.3rem;
+  }
+}
+
+.social-icons {
+  position: absolute;
+  margin-bottom: 2rem;
+  width: 100%;
+  z-index: 2;
+}
+
+.social-icons ul {
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.social-icons ul>li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inline-block;
+}
+
+.social-icons ul>li>a {
+  display: block;
+  color: goldenrod;
+  background-color: #694c1e;
+  border-radius: 100%;
+  font-size: 2rem;
+  line-height: 4rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 768px) {
+  .social-icons {
+    margin-bottom: 500;
+    position: absolute;
+    right: 2.5rem;
+    bottom: 20rem;
+    width: auto;
+  }
+
+  .social-icons ul {
+    margin-top: 0;
+    width: auto;
+  }
+
+  .social-icons ul>li {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .social-icons ul>li:last-child {
+    margin-bottom: 100;
+  }
+
+  .social-icons ul>li>a {
+    transition: all 0.2s ease-in-out;
+    font-size: 2rem;
+    line-height: 4rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .social-icons ul>li>a:hover {
+    background-color: #3b2a0f;
+    color: gold;
+  }
+}
+
+/* .btn-secondary {
+  background-color: green;
+  border-color: gold;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:hover {
+  color: gold;
+  background-color: #ace1af !important;
+  border-color: green !important;
+} */
+
+.input {
+  font-weight: 300 !important;
+}
+
+/* div {
+  border: 1px solid red;
+} */
+
+.devicons {
+  font-size: 36px;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  line-height: 50px;
+  background-color: #355C7D;
+  color: darkgoldenrod;
+}
+
+button {
+  color: orange;
+  background-color: #443318;
+  border-radius: 7px;
+  padding: 14px;
+}
+
+.button {
+  background-color: #3b2a0f;
+  border: none;
+  border-radius: 7px 77px;
+  color: orange;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 1
+}
+
+body {
+  font-family: 'Zen Dots', "Monaco", monospace;
+  background-color: #8d7759
+}
+
+hr {
+  font-family: "Monaco", monospace;
+  overflow: visible;
+  border: none;
+  border-top: medium double #3b2a0f;
+  color: orange;
+  text-align: center;
+}
+
+hr:after {
+  content: "§";
+  display: inline-block;
+  position: relative;
+  top: -1rem;
+  font-size: 1.5rem;
+  padding: 0 0.25rem;
+  background-color: #8d7759
+}
+
+h1 {
+  padding: 15px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  color: gold;
+  font-size: 56px;
+  text-shadow: 2px 2px 7px orange;
+}
+
+/* body>div.masthead>div.container.h-100>div>div>div>div */
+/* h2 {
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  /* color: #3b2a0f; 
+} */
+
+/* h3,
+form {
+  text-align: center;
+  color: #3b2a0f;
+} */
