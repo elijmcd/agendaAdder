@@ -1,4 +1,5 @@
 body {
+    margin-bottom: 60px;
     font-family: 'Zen Dots',"Monaco", monospace;
     background-color: #8d7759
 }
@@ -34,13 +35,13 @@ h1 {
     margin-top: 20px;
     text-align: center;
     color: gold;
-    font-size: 56px;
+    font-size: 48px;
     text-shadow: 2px 2px 7px orange;
     box-shadow: 2px 2px 7px orange;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: auto;
     text-align: center;
     /* color: #3b2a0f; */
@@ -169,7 +170,7 @@ button {
 }
 
 input[type=text] {
-    font-size: 1rem;
+    font-size: .5rem;
     background-color: #DDBA49;
     border-radius: 77px 9px;
     width: 50%;
@@ -185,7 +186,7 @@ tr.complete>td:nth-child(-n+4) {
 
 #agendaRow {
     background: #DDBA49;
-    font-size: larger;
+    /* font-size: larger; */
     font-weight: 600;
     color: #3b2a0f;
     border-radius: 7px 77px !important;
@@ -221,7 +222,7 @@ tr.complete>td:nth-child(-n+4) {
     color: #DDBA49;
     text-align: center;
     font-weight: 400;
-    font-size: xx-large;
+    font-size: x-large;
     transition: 0.3s;
     display: inline-block;
     cursor: pointer;
@@ -285,7 +286,7 @@ tr.complete>td:nth-child(-n+4) {
 
 #editModal>div>div>div.modal-body.text-center>div>form>div>input {
     width: 100%;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 #editModal>div>div>div.modal-body.text-center>div>form>div>input {
@@ -327,4 +328,20 @@ tr.complete>td:nth-child(-n+4) {
     background-color: #DDBA49;
     border-radius: 77px 7px;
     color: #694c1e;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #355C7D;
+    color: darkgoldenrod;
+}
+
+#myModal>div>div>div.modal-body.text-center>div>form>div>input {
+    font-size: 1rem;
 }
