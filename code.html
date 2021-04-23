@@ -70,64 +70,55 @@
                   <h2 class="mb-0">
                     <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseOne"
                       aria-expanded="true" aria-controls="collapseOne">
-                      Function to Calculate the Payment Data (Or: One Function To Rule Them All)
+                      Searching, preparing, and displaying from Local Storage
                     </button>
                   </h2>
                 </div>
               </div>
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#scriptMarkUp">
                 <div class="card-body">
-                  <pre><code class="language-javascript">function calculatePayment() {
+                  <pre><code class="language-javascript">$(function () {
+  prepareLocalStorage();
+  showAgenda(getLocalStorage());
 
-    let principal = document.getElementById("inAmount").value;
-    if (principal == "") {
-        alert("Please enter an amount for the loan.");
-        return false;
-    } else if (principal < 0) { 
-        alert("Invalid loan amount, please enter a non-negative number.") 
-        return false; 
-    } 
+  $("#agendaCount").text(`CURRENT AGENDA (${getAgendaCount()})`);
+});
 
-    let rate = parseFloat(document.getElementById("inRate").value);
-    rate=rate / 1200; 
-    let term=parseFloat(document.getElementById("inTerm").value);
-    term=term * 12;
-    let monthlyPayment=principal * rate / (1 - (1 + rate) ** (-term));
+let agendaArray = [];
 
-    let principalPaid=0;
-    let interestPaid=0;
-    let balance=principal; 
-    let remainingBalance=0; 
-    remainingBalance=balance - principalPaid; 
+function prepareLocalStorage() {
+  if (getLocalStorage() == null) {
+    setLocalStorage(new Array());
+  }
+}
 
-    let totalInterest=0; 
-    let totalPaid=0; 
+function getLocalStorage() {
+  let agendaList = JSON.parse(localStorage.getItem("agendaArray")) || [];
+  if (agendaList.length == 0) {
+    agendaList = agendaArray;
+    localStorage.setItem("agendaArray", JSON.stringify(agendaList));
+  }
 
-    let payArray=[]; 
+  return JSON.parse(localStorage.getItem("agendaArray"));
+}
 
-    for (let i = 1; i <= term; i++) { 
-        totalPaid=totalPaid + monthlyPayment; 
-        interestPaid=remainingBalance * rate; 
-        principalPaid=monthlyPayment - interestPaid; 
-        totalInterest +=interestPaid; 
-        remainingBalance -=principalPaid;
+function setLocalStorage(data) {
+  localStorage.setItem("agendaArray", JSON.stringify(data));
+}
 
-        let obj=addToArray(i, monthlyPayment, principalPaid, interestPaid, totalInterest, remainingBalance);
+function getAgendumId(element) {
+  let agendumId = $(element).parent().attr("data-id");
+  return agendumId;
+}
 
-        payArray.push(obj); 
-    }; 
+function getIndex(element) {
+  let agendumIndex = $(element).parent().attr("data-id");
+  return agendumIndex
+}
 
-    let payAmount=document.getElementById("monthlyPayment"); 
-    payAmount.innerText="$" + (Math.round(monthlyPayment * 100) / 100).toFixed(2); 
-    let principalAmt=document.getElementById("principalAmt"); 
-    principalAmt.innerText="$" + parseFloat(principal); 
-    let interestPay=document.getElementById("interestTotal"); 
-    interestPay.innerText="$" + (Math.round(totalInterest * 100) / 100).toFixed(2);
-    let costTotal=document.getElementById("costTotal");
-    costTotal.innerText="$" + (Math.round((parseFloat(principal) + totalInterest) * 100) / 100).toFixed(2);
-   
-    displayData(payArray); 
-};</code></pre>
+function getAgendaCount() {
+  return getLocalStorage().length;
+}</code></pre>
                 </div>
               </div>
             </div>
@@ -137,23 +128,43 @@
                   <h2 class="mb-0">
                     <button class="btn btn-info collapsed" type="button" data-toggle="collapse"
                       data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Function to Assemble Payment Data into an Object
+                      Functions to Create and Edit Agenda
                     </button>
                   </h2>
                 </div>
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#scriptMarkUp">
                 <div class="card-body">
-                  <pre><code class="language-js">function addToArray(month, totalPaid, principalPaid, interestPaid, totalInterest, remainingBalance) {
-    let obj = {};
-    obj["month"] = month;
-    obj["totalPaid"] = totalPaid;
-    obj["principalPaid"] = principalPaid;
-    obj["interestPaid"] = interestPaid;
-    obj["totalInterestPaid"] = totalInterest;
-    obj["remainingBalance"] = remainingBalance;
+                  <pre><code class="language-js">function createAgendum(formData) {
+    let agenda = getLocalStorage();
+    let agendum = {
+        id: generateAgendumId(),
+        created: new Date(),
+        completed: false,
+        title: formData[1].value,
+        dueDate: new Date(`${formData[2].value} 00:00`)
+    }
 
-    return obj;
+    agenda.push(agendum);
+    setLocalStorage(agenda);
+    showAgenda();
+}
+
+function generateAgendumId() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+  var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+  return v.toString(16);
+  });
+}
+
+function editAgendum(formData) {
+    let agenda = getLocalStorage();
+    let agendumId = formData[1].value;
+    let agendum = agenda.find(t => t.id == agendumId);
+    agendum.title = formData[2].value;
+    agendum.dueDate = new Date(formData[3].value);
+    setLocalStorage(agenda);
+    showAgenda();
 }</code></pre>
                 </div>
               </div>
@@ -164,51 +175,42 @@
                   <h2 class="mb-0">
                     <button class="btn btn-info collapsed" type="button" data-toggle="collapse"
                       data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Displaying the Payment Data in the Table
+                      Functions to Edit and Remove Agenda
                     </button>
                   </h2>
                 </div>
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#scriptMarkUp">
                 <div class="card-body">
-                  <pre><code class="language-js">function displayData(payArray) {
+                  <pre><code class="language-js">function abolishAgendum(element) {
 
-    const template = document.getElementById("dataTemplate");
-    const body = document.getElementById("tableBody");
+  let agendumId = getAgendumId(element);
+  let agenda = getLocalStorage();
+  let index = agenda.findIndex(t => t.id == agendumId);
 
-    body.innerHTML = "";
+  agenda.splice(index, 1);
+  setLocalStorage(agenda);
+  showAgenda();
+}
 
-    for (let i = 0; i < payArray.length; i++) {
-        const dataRow = document.importNode(template.content, true);
+function accomplishAgendum(element) {
 
-        dataRow.getElementById("month").textContent = payArray[i].month;
-        dataRow.getElementById("totalPaid").textContent = payArray[i].totalPaid.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        });
+  let agenda = getLocalStorage();
+  let agendumId = getAgendumId(element);
+  let agendum = agenda.find(t => t.id == agendumId);
+  agendum.completed = true;
+  setLocalStorage(agenda);
+  showAgenda();
+}
 
-        dataRow.getElementById("principalPaid").textContent = payArray[i].principalPaid.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        });
+function popEditModal(element) {
+  let agenda = getLocalStorage();
+  let agendumId = getAgendumId(element);
+  let agendum = agenda.find(t => t.id == agendumId);
 
-        dataRow.getElementById("interestPaid").textContent = payArray[i].interestPaid.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        });
-        
-        dataRow.getElementById("totalInterestPaid").textContent = payArray[i].totalInterestPaid.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        });
-        
-        dataRow.getElementById("remainingBalance").textContent = payArray[i].remainingBalance.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-        });
-
-        body.appendChild(dataRow);
-    };
+  document.getElementById("editId").value = agendum.id;
+  document.getElementById("editTitle").value = agendum.title;
+  document.getElementById("editDueDate").value = displayDate(agendum.dueDate);
 }</code></pre>
                 </div>
               </div>

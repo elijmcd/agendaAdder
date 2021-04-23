@@ -147,12 +147,6 @@ function getAgendaCount() {
     return getLocalStorage().length;
 }
 
-// function
-
-function clearTooltip() {}
-
-function triggerAlert(title, message) {}
-
 function popEditModal(element) {
     let agenda = getLocalStorage();
     let agendumId = getAgendumId(element);
@@ -161,8 +155,6 @@ function popEditModal(element) {
     document.getElementById("editId").value = agendum.id;
     document.getElementById("editTitle").value = agendum.title;
     document.getElementById("editDueDate").value = displayDate(agendum.dueDate);
-
-    
 }
 
 function displayDate(date) {
