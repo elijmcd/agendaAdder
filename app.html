@@ -79,9 +79,9 @@
                     <thead class="thead-dark">
                         <tr>
                             <th class="d-none"></th>
-                            <th style="font-size: 22px;">📋 Agendum</th>
-                            <th style="font-size: 17px;">📅 Add Date</th>
-                            <th style="font-size: 17px;">⏳ Due Date</th>
+                            <th style="font-size: 22px; font-weight:400;">📋 Agendum</th>
+                            <th style="font-size: 17px; font-weight:400;">📅 Add Date</th>
+                            <th style="font-size: 17px;font-weight:400;">⏳ Due Date</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -157,11 +157,12 @@
             <td id="dueDate"></td>
             <td id="tdCrud" data-id="">
                 <a onclick="accomplishAgendum(this)" class="btn btn-sm btn-outline-warning btn-light"
-                    style="font-size: 20px">✅</a>
+                    style="font-size: 20px;" data-toggle="tooltip" data-placement="top" title="Accomplish Agendum">✅</a>
                 <a onclick="popEditModal(this)" class="btn btn-sm btn-outline-warning btn-light" type="button"
-                    data-toggle="modal" data-target="#editModal" style="font-size: 20px">✍</a>
+                    data-toggle="modal" data-target="#editModal" style="font-size: 20px;" data-toggle="tooltip"
+                    data-placement="top" title="Adjust Agendum">✍</a>
                 <a onclick="abolishAgendum(this)" class="btn btn-sm btn-outline-warning btn-light"
-                    style="font-size: 20px">❌</a>
+                    style="font-size: 20px;" data-toggle="tooltip" data-placement="top" title="Abolish Agendum">❌</a>
             </td>
         </tr>
     </template>

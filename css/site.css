@@ -349,3 +349,10 @@ tr.complete>td:nth-child(-n+4) {
 #tableRow>div>div>h1 {
     font-size: 40px;
 }
+.btn-outline-warning {
+    border-color:#c37747
+}
+.btn-outline-warning:hover {
+    border-color:#c37747;
+    background-color: #c37747;
+}
