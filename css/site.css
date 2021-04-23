@@ -170,14 +170,14 @@ button {
 }
 
 input[type=text] {
-    font-size: .5rem;
+    font-size: 1rem;
     background-color: #DDBA49;
     border-radius: 77px 9px;
     width: 50%;
     padding: 12px 20px;
     margin: 24px 0;
     box-sizing: border-box;
-    min-height: 60px;
+    min-height: 50px;
 }
 
 tr.complete>td:nth-child(-n+4) {
@@ -235,6 +235,7 @@ tr.complete>td:nth-child(-n+4) {
     background-color: #DDBA49;
     border-radius: 77px 7px;
     color: #694c1e;
+    border-color: #694c1e;
 }
 
 #myModal>div>div>div.modal-body.text-center>div>form>div>input {
@@ -344,4 +345,7 @@ tr.complete>td:nth-child(-n+4) {
 
 #myModal>div>div>div.modal-body.text-center>div>form>div>input {
     font-size: 1rem;
+}
+#tableRow>div>div>h1 {
+    font-size: 40px;
 }
