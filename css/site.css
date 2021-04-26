@@ -1,10 +1,14 @@
 body {
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
     font-family: 'Zen Dots',"Monaco", monospace;
     background-color: #8d7759
 }
 
 hr {
+        position: -webkit-sticky;
+        position: sticky;
+
+    margin-left: 1rem;
     font-family: "Monaco", monospace;
     overflow: visible;
     border: none;
@@ -14,6 +18,9 @@ hr {
 }
 
 hr:after {
+        position: -webkit-sticky;
+        position: sticky;
+
     content: "§";
     display: inline-block;
     position: relative;
@@ -23,6 +30,10 @@ hr:after {
     background-color: #8d7759
 }
 
+nav {
+    position: fixed;
+    width: 100%;
+}
 h1 {
     padding: 15px;
     background-color: #3b2a0f;
@@ -91,51 +102,59 @@ form {
     opacity: 1
 }
 
-.row {
-    display: flex;
+/* .row {
+    display: internal;
 }
 
 .row:after {
     content: "";
-    display: table;
+    display: box;
     clear: both;
-}
+} */
 
 .column1 {
-    margin-top: 80px;
-    float: left;
-    width: 50%;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        align-self: center;
+    /* margin-top: 80px; */
+    /* float: left; */
+    min-width: 100%;
     padding: 10px;
 }
 
 .column2 {
-    margin-top: 80px;
-    float: right;
-    width: 50%;
+    margin-top: 0px;
+    /* float: right; */
+    /* width: 50%; */
+    min-width: 100%;
     padding: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
     object-fit: contain;
     top: 50%;
     transform: translateY(7%);
 }
 
 .sticker {
+    align-self:center;
     position: -webkit-sticky;
-    position: sticky;
+    position: top sticky;
     top: 18px;
-    width: 75%;
-    max-width: 100%;
-    height: auto;
+    /* width:100%; */
+    max-width: 50%;
+    max-height: auto;
     border: 3px solid orange;
     border-style: groove outset;
 }
 
 img {
     box-shadow: 0 2px 7px orange;
-    max-width: 100%;
+    width: 50%;
+    max-width: 50%;
     max-height: auto;
-    display: block;
+    /* max-height: auto; */
+    display: flex;
     margin: auto;
     border: 1px solid orange;
     border-radius: 10px;
@@ -169,7 +188,7 @@ button {
     opacity: 1
 }
 
-input[type=text] {
+/* input[type=text] {
     font-size: 1rem;
     background-color: #DDBA49;
     border-radius: 77px 9px;
@@ -178,7 +197,7 @@ input[type=text] {
     margin: 24px 0;
     box-sizing: border-box;
     min-height: 50px;
-}
+} */
 
 tr.complete>td:nth-child(-n+4) {
     text-decoration: orangered wavy line-through;
@@ -189,8 +208,6 @@ tr.complete>td:nth-child(-n+4) {
     /* font-size: larger; */
     font-weight: 600;
     color: #3b2a0f;
-    border-radius: 7px 77px !important;
-
 }
 
 #eventData>thead {
@@ -216,19 +233,28 @@ tr.complete>td:nth-child(-n+4) {
     border: 2px solid orange;
 }
 
+#agendaAdder>div {
+    align-items: center;
+    align-content: center;
+    object-position: center;
+    justify-items: center;
+    justify-content: center;
+
+}
 #agendaAdder>div>button {
     background-color: #694c1e;
     border-radius: 77px 7px;
     color: #DDBA49;
     text-align: center;
     font-weight: 400;
-    font-size: x-large;
+    font-size: large;
     transition: 0.3s;
-    display: inline-block;
+    /* display: inline-block; */
     cursor: pointer;
     border: 2px solid orange;
-    max-width: 50%;
+    max-width: 100%;
     text-shadow: 1px 1px 4px orange;
+    justify-content: center;
 }
 
 #agendaAdder>div>button:hover {
@@ -236,6 +262,12 @@ tr.complete>td:nth-child(-n+4) {
     border-radius: 77px 7px;
     color: #694c1e;
     border-color: #694c1e;
+}
+.adder-button>div{
+    justify-content: center;
+    align-content: center;
+    object-position: center;
+    
 }
 
 #myModal>div>div>div.modal-body.text-center>div>form>div>input {
@@ -346,6 +378,8 @@ tr.complete>td:nth-child(-n+4) {
 #myModal>div>div>div.modal-body.text-center>div>form>div>input {
     font-size: 1rem;
 }
+
+
 #tableRow>div>div>h1 {
     font-size: 40px;
 }
@@ -355,4 +389,22 @@ tr.complete>td:nth-child(-n+4) {
 .btn-outline-warning:hover {
     border-color:#c37747;
     background-color: #c37747;
+}
+
+#eventData {
+    
+    max-width:100%;
+    margin-top: 0px;
+    margin-right: 2rem;
+    margin-bottom: 60px;
+}
+
+#agendaAdder>div>button {
+    object-position: center;
+    align-items: center;
+}
+
+table {
+    max-width:100%;
+    min-width: 100%;
 }
