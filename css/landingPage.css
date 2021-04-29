@@ -22,7 +22,7 @@ html {
 
 body {
   margin-top: 50px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
   height: 100%;
   min-height: 35rem;
   position: relative;
@@ -33,7 +33,7 @@ body {
   overflow: hidden;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -41,7 +41,7 @@ h5,
 h6 {
   font-family: 'Cambridge', Georgia, Times, 'Times New Roman', serif;
   font-weight: 700;
-}
+} */
 
 .overlay {
   position: absolute;
@@ -56,20 +56,16 @@ h6 {
   background-image: url(/img/arizona-cactus-southwest-usa.jpg);
 }
 
-body>div.masthead>div.container.h-100>div>div{
-  margin-top: 0;
-  padding-top: 0;
-}
 .masthead {
   object-position: center;
   position: relative;
   overflow: hidden;
   padding-bottom: 3rem;
-  z-index: 2;
+  z-index: 2;  
 }
 
 .masthead .masthead-bg {
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   right: 0;
@@ -113,7 +109,9 @@ body>div.masthead>div.container.h-100>div>div{
 
   .masthead .masthead-bg {
     min-height: 0;
-    transform: skewX(-8deg);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transform: skewX(0deg);
     transform-origin: right;
   }
 
@@ -126,9 +124,9 @@ body>div.masthead>div.container.h-100>div>div{
     font-size: 3.5rem;
   }
 
-  .masthead .masthead-content p {
+  /* .masthead .masthead-content p {
     font-size: 1.3rem;
-  }
+  } */
 }
 
 .social-icons {
