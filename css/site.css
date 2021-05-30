@@ -1,410 +1,200 @@
-body {
-    /* margin-bottom: 60px; */
-    font-family: 'Zen Dots',"Monaco", monospace;
-    background-color: #8d7759
-}
+/* Color Palette from Adobe Color */
+/* #45BF41 */
+/* #F2D22E */
+/* #F2B263 */
+/* #F2DCC9 */
+/* #0D0D0D */
 
-hr {
-        position: -webkit-sticky;
-        position: sticky;
 
-    margin-left: 1rem;
-    font-family: "Monaco", monospace;
-    overflow: visible;
-    border: none;
-    border-top: medium double #3b2a0f;
-    color: orange;
-    text-align: center;
-}
-
-hr:after {
-        position: -webkit-sticky;
-        position: sticky;
-
-    content: "§";
-    display: inline-block;
+html {
     position: relative;
-    top: -1rem;
-    font-size: 1.5rem;
-    padding: 0 0.25rem;
-    background-color: #8d7759
+    min-height: 100%;
+        background-color: #8d7759;
+
 }
 
-nav {
-    position: fixed;
-    min-width: 100%;
-}
-h1 {
-    padding: 15px;
-    background-color: #3b2a0f;
-    border: 4px solid gold;
-    border-style: groove;
-    border-radius: 7px 77px;
-    text-align: center;
-    opacity: 0.6;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-    color: gold;
-    font-size: 48px;
-    text-shadow: 2px 2px 7px orange;
-    box-shadow: 2px 2px 7px orange;
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /* font-family: 'Zen Dots',
+    "Monaco",
+    monospace; */
+
+    background-color: #8d7759;
+    /* background-color: #1D976C; */
+
+    /* background: #355C7D; */
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #C06C84, #6C5B7B, #355C7D);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin: auto;
-    text-align: center;
-    /* color: #3b2a0f; */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
 }
 
+h1,
+h2,
 h3,
-form {
-    text-align: center;
-    color: #3b2a0f;
+h4,
+.fab {
+    color: #355C7D;
 }
 
-/* ul {
-    max-width: 100%;
-    background: #3b2a0f;
-    padding: 20px;
-    box-align: center;
-    list-style: square;
-    font-size: 200%;
-    list-style-position: outside;
-} */
+p {
+    color: #355C7D;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
 
-/* ul li {
+.fab {
     font-size: 1.5rem;
-    max-width: 100%;
-    border-radius: 7px 77px;
-    background: #c3a33a;
-    margin: 5px;
+}
+
+p .fab {
+    color:darkgoldenrod;
+    font-size: 2.5rem;
+}
+
+
+/* Change size of Bootstrap badge
+.badge {
+    font-size: 1.125rem;
 } */
 
-.abolishbutton {
-    background-color: #3b2a0f;
-    border: none;
-    border-radius: 77px 7px;
-    color: orange;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+/* Hero Image */
+#hero-image {
+    max-height: 40vh;
 }
 
-.abolishbutton:hover {
-    opacity: 1
+
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body>.container {
+    padding: 60px 15px 0px;
+    /* border: solid; */
 }
 
-/* .row {
-    display: internal;
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
-.row:after {
-    content: "";
-    display: box;
-    clear: both;
-} */
-
-.column1 {
-        justify-content: center;
-        align-content: center;
-        align-items: center;
-        align-self: center;
-    /* margin-top: 80px; */
-    /* float: left; */
-    min-width: 100%;
-    padding: 10px;
+code {
+    font-size: 80%;
 }
 
-.column2 {
-    margin-top: 0px;
-    /* float: right; */
-    /* width: 50%; */
-    min-width: 100%;
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    object-fit: contain;
-    top: 50%;
-    transform: translateY(7%);
+.row>div {
+    margin-bottom: 15px;
 }
 
-.sticker {
-    align-self:center;
-    position: -webkit-sticky;
-    position: top sticky;
-    top: 18px;
-    /* width:100%; */
-    max-width: 50%;
-    max-height: auto;
-    border: 3px solid orange;
-    border-style: groove outset;
+.content {
+    min-height: 300px;
+    background: #dbdfe5;
+        background: #8d7759
+
 }
 
-img {
-    box-shadow: 0 2px 7px orange;
-    width: 50%;
-    max-width: 50%;
-    max-height: auto;
-    /* max-height: auto; */
-    display: flex;
-    margin: auto;
-    border: 1px solid orange;
-    border-radius: 10px;
-    padding: 5px;
+.content.bg-alt {
+    background: #b4bac0;
+        background: #8d7759
+
 }
 
-button {
-    color: orange;
-    background-color: #443318;
-    border-radius: 7px;
-    padding: 14px;
+.sidebar-top {
+    min-height: 140px;
+    background: #dbdfe7;
+        background: #8d7759
+
 }
 
-.button {
-    background-color: #3b2a0f;
-    border: none;
-    border-radius: 7px 77px;
-    color: orange;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.sidebar-bottom {
+    min-height: 145px;
+    background: #7e8aa0;
+    margin-bottom: -15px;
+        background: #8d7759
+
 }
 
-.button:hover {
-    opacity: 1
+.sidebar,
+.content {
+    min-height: 300px;
+        background: #8d7759
+
 }
 
-/* input[type=text] {
-    font-size: 1rem;
-    background-color: #DDBA49;
-    border-radius: 77px 9px;
-    width: 50%;
-    padding: 12px 20px;
-    margin: 24px 0;
-    box-sizing: border-box;
-    min-height: 50px;
-} */
+.content-top {
+    min-height: 160px;
+    background: #b4bac0;
+        background: #8d7759
 
+}
+
+.content-bottom {
+    min-height: 125px;
+    background: #7e8aa0;
+    margin-bottom: -15px;
+        background: #8d7759
+
+}
+
+.content-bottom.bg-alt {
+    background: #9ca5b6;
+        background: #8d7759
+
+}
+
+@media (max-width: 991px) {
+    .content-bottom {
+        margin-bottom: 15px;
+    }
+
+    .content-bottom.bg-alt {
+        margin-bottom: -15px;
+    }
+}
+
+.intro {
+    /* background: #7e8aa0; */
+    min-height: 250px;
+}
+
+.section {
+    min-height: 150px;
+    /* background: #dbdfe5; */
+}
+
+.navbar .navbar-brand {
+    color: darkgoldenrod;
+}
+
+.main {
+        background: #8d7759
+
+}
 tr.complete>td:nth-child(-n+4) {
     text-decoration: orangered wavy line-through;
 }
 
-#agendaRow {
-    background: #DDBA49;
-    /* font-size: larger; */
-    font-weight: 600;
-    color: #3b2a0f;
-}
-
-#eventData>thead {
-    background-color: #DDBA49;
-    color: #DDBA49;
-}
-
-#tableRow>div>div>button {
-    background-color: #3b2a0f;
-    border: none;
-    border-radius: 7px 77px;
-    color: orange;
-    padding: 16px 32px;
-    text-align: center;
-    font-weight: 600;
-    font-size: xx-large;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid orange;
-}
-
-#agendaAdder>div {
-    align-items: center;
-    align-content: center;
-    object-position: center;
-    justify-items: center;
-    justify-content: center;
+.container{
+        /* background: #8d7759 */
 
 }
-#agendaAdder>div>button {
-    background-color: #694c1e;
-    border-radius: 77px 7px;
-    color: #DDBA49;
-    text-align: center;
-    font-weight: 400;
-    font-size: large;
-    transition: 0.3s;
-    /* display: inline-block; */
-    cursor: pointer;
-    border: 2px solid orange;
-    max-width: 100%;
-    text-shadow: 1px 1px 4px orange;
-    justify-content: center;
-}
+.row.mt-5.pt-5 {
+        /* background: #8d7759 */
 
-#agendaAdder>div>button:hover {
-    background-color: #DDBA49;
-    border-radius: 77px 7px;
-    color: #694c1e;
-    border-color: #694c1e;
-}
-.adder-button>div{
-    justify-content: center;
-    align-content: center;
-    object-position: center;
-    
-}
-
-#myModal>div>div>div.modal-body.text-center>div>form>div>input {
-    width: 100%;
-    font-size: 22px;
-}
-
-#myModal>div>div>div.modal-body.text-center>div>form>div>input {
-    background-color: gold;
-    color: #3b2a0f;
-}
-
-#myModal>div>div>div.modal-header {
-    background-color: #694c1e;
-    border: 2px solid goldenrod;
-}
-
-#myModal>div>div>div.modal-body.text-center {
-    background-color: #8d7759;
-    border: 2px solid goldenrod;
-}
-
-#myModal>div>div>div.modal-header {
-    text-align: center;
-    padding-left: 70px;
-    text-shadow: 1px 1px 4px orange;
-    color: #DDBA49;
-}
-
-#myModal>div>div>div.modal-header>button {
-    color: red;
-    font-size: xx-large;
-}
-
-#myModal>div>div>div.modal-body.text-center>div>form>button {
-    background-color: #694c1e;
-    color: #DDBA49;
-    border: #DDBA49;
-    width: 75%;
-    margin-top:20px;
-}
-
-#myModal>div>div>div.modal-body.text-center>div>form>button:hover {
-    background-color: #DDBA49;
-    border-radius: 77px 7px;
-    color: #694c1e;
-}
-
-
-#editModal>div>div>div.modal-body.text-center>div>form>div>input {
-    width: 100%;
-    font-size: 18px;
-}
-
-#editModal>div>div>div.modal-body.text-center>div>form>div>input {
-    background-color: gold;
-    color: #3b2a0f;
-}
-
-#editModal>div>div>div.modal-header {
-    background-color: #694c1e;
-    border: 2px solid goldenrod;
-}
-
-#editModal>div>div>div.modal-body.text-center {
-    background-color: #8d7759;
-    border: 2px solid goldenrod;
-}
-
-#editModal>div>div>div.modal-header {
-    text-align: center;
-    padding-left: 70px;
-    text-shadow: 1px 1px 4px orange;
-    color: #DDBA49;
-}
-
-#editModal>div>div>div.modal-header>button {
-    color: red;
-    font-size: xx-large;
-}
-
-#editModal>div>div>div.modal-body.text-center>div>form>button {
-    background-color: #694c1e;
-    color: #DDBA49;
-    border: #DDBA49;
-    width: 75%;
-    margin-top: 20px;
-}
-
-#editModal>div>div>div.modal-body.text-center>div>form>button:hover {
-    background-color: #DDBA49;
-    border-radius: 77px 7px;
-    color: #694c1e;
-}
-
-/* .footer {
-    position: fixed;
-    bottom: 0;
-    min-width: 100%;
-    /* Set the fixed height of the footer here */
-    /* height: 60px; */
-    /* line-height: 60px; */
-    /* Vertically center the text there */
-    /* background-color: #355C7D; */
-   /* / color: darkgoldenrod; */
-/* } */ */
-
-#myModal>div>div>div.modal-body.text-center>div>form>div>input {
-    font-size: 1rem;
-}
-
-
-#tableRow>div>div>h1 {
-    font-size: 40px;
-}
-.btn-outline-warning {
-    border-color:#c37747
-}
-.btn-outline-warning:hover {
-    border-color:#c37747;
-    background-color: #c37747;
-}
-
-#eventData {
-    
-    max-width:100%;
-    margin-top: 0px;
-    margin-right: 2rem;
-    margin-bottom: 60px;
-}
-
-#agendaAdder>div>button {
-    object-position: center;
-    align-items: center;
-}
-
-table {
-    max-width:100%;
-    min-width: 100%;
 }

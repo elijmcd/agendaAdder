@@ -15,14 +15,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/site-old.css"> -->
     <link rel="stylesheet" href="/css/site.css">
 </head>
 
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark navbar-fixed-top bg-dark">
-            <a class="navbar-brand" href="/index.html">Agenda Adder</a>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" id="logo" href="index.html">📝 AgendaAdder 🐍</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,124 +32,133 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/app.html">The App</a>
+                        <a class="nav-link" href="app.html">The App <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/code.html">See the Code</a>
+                        <a class="nav-link" href="code.html">See The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//github.com/elijmcd/" target="_blank">Get the Code</a>
+                        <a class="nav-link" href="https://github.com/elijmcd/tacocat" target="_blank">Get The
+                            Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="//dougaldev.net" target="_blank">My Portfolio</a>
+                        <a class="nav-link" href="http://dougaldev.net">Visit My Portfolio</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-sm-12 column1">
-                <img class="sticker" src="img/agendaAdder.png" alt="AgendaAdder Logo"
-                    style="max-height: 550px; max-width:75%; flex:content;">
-                <div class="adder-button" id="agendaAdder">
-                    <div>
-                        <br>
-                        <hr>
-                        <br>
-                        <button class="btn form-control" type="button" data-toggle="modal" data-target="#myModal">
-                            <!-- <h1>Add 🐍 Agendum</h1> -->
-                            <h2>🐍Add Agendum📝</h2>
-                        </button>
-                        <br><br>
-                        <hr>
+    <div class="main" role="main">
+        <div class="container">
+            <div class="row mt-5 pt-5">
+                <div class="col-lg-6 col-md-12 col-sm-12 justify-content-center column1">
+                    <img class="sticker img-fluid" src="img/agendaAdder.png" alt="AgendaAdder Logo"
+                        style="max-height: 550px; max-width:100%; flex:content;">
+                    <div class="adder-button" id="agendaAdder">
+                        <div>
+                            <br>
+                            <button class="btn btn-info form-control" type="button" data-toggle="modal"
+                                data-target="#myModal">
+                                <!-- <h1>Add 🐍 Agendum</h1> -->
+                                🐍Add Agendum📝
+                            </button>
+                            <hr>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <br>
-            <!-- <button type="button" data-toggle="modal" data-target="#myModal"
+                <br>
+                <!-- <button type="button" data-toggle="modal" data-target="#myModal"
                     class="btn btn-info btn-block btn-outline-dark">
                     ADD AGENDUMENTS
                 </button> -->
-            <div class="col-lg-6 col-md-12 col-sm-12 column2">
-                <table class="table table-striped" id="eventData">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th class="d-none"></th>
-                            <th style="font-size: 22px; font-weight:400;">📋 Agendum</th>
-                            <th style="font-size: 17px; font-weight:400;">📅 Add Date</th>
-                            <th style="font-size: 17px;font-weight:400;">⏳ Due Date</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="agendaBody">
-                        <!-- insert data here -->
-                    </tbody>
-                </table>
+                <div class="col-lg-6 col-md-12 col-sm-12 column2">
+                    <div class="form-row">
+                        <div class="col-lg-6 col-md-12">
+                            <table class="table table-striped bg-white" id="eventData">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="d-none"></th>
+                                        <th style="font-size: 22px; font-weight:400;">📋 Agendum</th>
+                                        <th style="font-size: 17px; font-weight:400;">📅 Add Date</th>
+                                        <th style="font-size: 17px;font-weight:400;">⏳ Due Date</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="agendaBody">
+                                    <!-- insert data here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
+        <footer class="footer" style=" background: #355C7D;">
+            <div class="container text-center">
+                <span style="color:darkgoldenrod">AgendaAdder | &copy; Eli McDougal | 2021</span>
+            </div>
+        </footer>
 
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 style="text-align: center;">Add New Agendum</h2>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 style="text-align: center;">Add New Agendum</h2>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="rev-style" style="padding-top: .25rem">
+                            <form onsubmit="createAgendum(this)">
+                                <input type="hidden" name="ModalCreate" value="true" />
+                                <div class="form-group">
+                                    <label for="title" class="font-weight-bold" style="font-size:22px;">Task:</label>
+                                    <input type="text" class="form-control" name="Title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dueDate" class="font-weight-bold">Due Date:</label>
+                                    <input type="date" class="form-control" name="dueDate">
+                                </div>
+                                <button type="submit" class="btn btn-dark btn-outline-info">Submit</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body text-center">
-                    <div class="rev-style" style="padding-top: .25rem">
-                        <form onsubmit="createAgendum(this)">
-                            <input type="hidden" name="ModalCreate" value="true" />
-                            <div class="form-group">
-                                <label for="title" class="font-weight-bold" style="font-size:22px;">Task:</label>
-                                <input type="text" class="form-control" name="Title">
-                            </div>
-                            <div class="form-group">
-                                <label for="dueDate" class="font-weight-bold">Due Date:</label>
-                                <input type="date" class="form-control" name="dueDate">
-                            </div>
-                            <button type="submit" class="btn btn-dark btn-outline-info">Submit</button>
-                        </form>
+            </div>
+        </div>
+        <!-- hi -->
+        <div id="editModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Adjust Agendum</h2>
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="rev-style" style="padding-top: .25rem">
+                            <form onsubmit="editAgendum(this)">
+                                <input type="hidden" name="ModalCreate" value="true" />
+                                <input type="hidden" name="" id="editId" />
+                                <div class="form-group">
+                                    <label for="editTitle" class="font-weight-bold">Task:</label>
+                                    <input type="text" class="form-control" id="editTitle" name="editTitle">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editDueDate" class="font-weight-bold">Due Date:</label>
+                                    <input type="date" class="form-control" id="editDueDate" name="editDueDate">
+                                </div>
+                                <button type="submit" class="btn btn-dark btn-outline-info">Edit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- hi -->
-    <div id="editModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>Adjust Agendum</h2>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                </div>
-                <div class="modal-body text-center">
-                    <div class="rev-style" style="padding-top: .25rem">
-                        <form onsubmit="editAgendum(this)">
-                            <input type="hidden" name="ModalCreate" value="true" />
-                            <input type="hidden" name="" id="editId" />
-                            <div class="form-group">
-                                <label for="editTitle" class="font-weight-bold">Task:</label>
-                                <input type="text" class="form-control" id="editTitle" name="editTitle">
-                            </div>
-                            <div class="form-group">
-                                <label for="editDueDate" class="font-weight-bold">Due Date:</label>
-                                <input type="date" class="form-control" id="editDueDate" name="editDueDate">
-                            </div>
-                            <button type="submit" class="btn btn-dark btn-outline-info">Edit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <template id="template">
         <tr id="agendaRow">
@@ -183,6 +194,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
